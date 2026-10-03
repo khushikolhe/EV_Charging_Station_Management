@@ -1,9 +1,9 @@
 package evcharging.charging;
 
 abstract class Charger {
-    abstract String chargerID;
-    abstract double power;
-    abstract boolean availablility;
+    public abstract String chargerID;
+    public abstract double power;
+    public abstract boolean availablility;
 
     public void displayCharger()
     {

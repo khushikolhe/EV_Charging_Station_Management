@@ -16,5 +16,3 @@ public class ACCharger extends Charger {
         System.out.println("Charging Phase: " + chargingphase);
     }
 }
-
-}
