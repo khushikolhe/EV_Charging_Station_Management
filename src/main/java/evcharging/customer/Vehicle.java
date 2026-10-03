@@ -6,7 +6,8 @@ public class Vehicle {
         private String batteryCapacity;
         private String vehicleType;
 
-        public Customer(String vehicleNumber, String model, String batteryCapacity,String vehicleType) {
+        public Vehicle(String vehicleNumber, String model, String batteryCapacity,String vehicleType)
+        {
             this.vehicleNumber = vehicleNumber;
             this.model = model;
             this.batteryCapacity = batteryCapacity;
