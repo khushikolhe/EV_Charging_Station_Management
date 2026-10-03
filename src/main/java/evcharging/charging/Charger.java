@@ -1,6 +1,6 @@
 package evcharging.charging;
 
-abstract class Charger {
+abstract class Charger  {
     private String chargerID;
     private double power;
     private boolean availablility;

@@ -1,6 +1,6 @@
 package evcharging.customer;
 
-public class Customer {
+public class Customer  {
     private String username;
     private String ID;
     private String phonenumber;

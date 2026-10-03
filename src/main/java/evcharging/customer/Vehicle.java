@@ -1,6 +1,6 @@
 package evcharging.customer;
 
-public class Vehicle {
+public class Vehicle  {
         private String vehicleNumber;
         private String model;
         private String batteryCapacity;
