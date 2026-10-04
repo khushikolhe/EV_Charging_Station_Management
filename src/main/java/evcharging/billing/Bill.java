@@ -30,6 +30,10 @@ public class Bill{
 
     }
 
+    public int getBillId() {
+        return BillId;
+    }
+
     public double getTotalAmount() {
         return TotalAmount;
     }
