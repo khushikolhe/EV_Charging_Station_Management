@@ -2,8 +2,7 @@ package evcharging.charging;
 
 import evcharging.customer.Customer;
 import evcharging.customer.Vehicle;
-
-import java.time.Duration;
+import evcharging.thread.ChargingRunnable;
 
 class ChargingException extends Exception {
     public ChargingException(String message){
@@ -26,6 +25,10 @@ public class ChargingSession {
         }
         Active = true;
         System.out.println("Charging session started.");
+
+        ChargingRunnable task = new ChargingRunnable();
+        Thread ChargingThread = new Thread(task);
+        ChargingThread.start();
     }
 
     public void stopCharging(double duration) throws ChargingException {

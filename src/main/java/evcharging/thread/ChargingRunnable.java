@@ -1,10 +1,10 @@
 package evcharging.thread;
 
-public class ChargingThread extends Thread {
+public class ChargingRunnable implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Charging started...");
+        System.out.println("Charging started using Runnable...");
 
         for (int i = 10; i <= 100; i += 10) {
             System.out.println("Charging: " + i + "%");
