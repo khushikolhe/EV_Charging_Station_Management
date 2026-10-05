@@ -1,7 +1,6 @@
 package evcharging.billing;
 
 public class Bill{
-
     private int BillId;
     private double EnergyConsumed;
     private double RatePerUnit;

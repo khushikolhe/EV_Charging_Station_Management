@@ -1,35 +1,33 @@
 package evcharging.customer;
 
 public class Vehicle  {
-        private String vehicleNumber;
-        private String model;
-        private String batteryCapacity;
-        private String vehicleType;
+        private String VehicleNumber;
+        private String Model;
+        private String BatteryCapacity;
+        private String VehicleType;
 
         public Vehicle(String vehicleNumber, String model, String batteryCapacity,String vehicleType)
         {
-            this.vehicleNumber = vehicleNumber;
-            this.model = model;
-            this.batteryCapacity = batteryCapacity;
-            this.vehicleType=vehicleType;
+            this.VehicleNumber = vehicleNumber;
+            this.Model = model;
+            this.BatteryCapacity = batteryCapacity;
+            this.VehicleType=vehicleType;
         }
 
         public void displayUser() {
             System.out.println("----Vehicle Information----");
-            System.out.println("Vehicle number: " + vehicleNumber);
-            System.out.println("Model of the vehicle: " + model);
-            System.out.println("Battery capacity: " + batteryCapacity);
-            System.out.println("Type of vehicle: " + vehicleType);
+            System.out.println("Vehicle number: " + VehicleNumber);
+            System.out.println("Model of the vehicle: " + Model);
+            System.out.println("Battery capacity: " + BatteryCapacity);
+            System.out.println("Type of vehicle: " + VehicleType);
         }
 
-        public String getVehicleNumber() {
-            return vehicleNumber;
-        }
-        public String getModel() {return model;}
+        public String getVehicleNumber() {return VehicleNumber;}
+        public String getModel() {return Model;}
         public String getBatteryCapacity() {
-            return batteryCapacity;
+            return BatteryCapacity;
         }
         public String getVehicleType() {
-        return vehicleType;
+        return VehicleType;
     }
 }
