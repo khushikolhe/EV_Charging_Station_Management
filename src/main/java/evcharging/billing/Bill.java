@@ -19,6 +19,11 @@ public class Bill{
         TotalAmount = EnergyConsumed * RatePerUnit;
     }
 
+    public void CalculateBill(double TaxRate) {
+        double amount = EnergyConsumed * RatePerUnit;
+        TotalAmount = amount + (amount * TaxRate/100);
+    }
+
     public void DisplayBill() {
         System.out.println("----- EV Charging Bill -----");
         System.out.println("Bill ID: " + BillId);

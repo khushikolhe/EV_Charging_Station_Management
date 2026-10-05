@@ -22,22 +22,28 @@ public class ChargingStation {
         return stationID;
     }
 
-    public void addCharger(Charger charger)
-    {
-        for(int i=0;i<chargers.length;i++)
-        {
+    public void addCharger(Charger charger) {
+        for(int i=0;i<chargers.length;i++) {
             if(chargers[i]==null){
                 chargers[i]=charger;
+                System.out.println("Charger added successfully!");
                 break;
             }
         }
+        System.out.println("No more chargers can be added.");
     }
     public void display()
     {
-        System.out.println("---Cahrging Station Information---");
+        System.out.println("---Charging Station Information---");
         System.out.println("Station ID: "+stationID);
         System.out.println("Station name: "+stationName);
         System.out.println("Location: "+location);
+        System.out.println("Chargers: ");
+        for(int i=0;i< chargers.length;i++){
+            if(chargers[i]!=null){
+                chargers[i].displayCharger();
+            }
+        }
     }
 
 }

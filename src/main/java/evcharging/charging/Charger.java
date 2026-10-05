@@ -1,6 +1,6 @@
 package evcharging.charging;
 
-abstract class Charger  {
+public abstract class Charger  {
     private String chargerID;
     private double power;
     private boolean availablility;
@@ -9,7 +9,7 @@ abstract class Charger  {
     {
         System.out.println("---Charging Information---");
         System.out.println("Charger ID: "+chargerID);
-        System.out.println("Charging power: "+power+"kWh");
+        System.out.println("Charging power: "+power+" kWh");
         System.out.println("Charger availability: "+availablility);
     }
 
