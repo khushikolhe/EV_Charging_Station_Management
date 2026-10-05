@@ -32,18 +32,25 @@ public class ChargingSession {
     }
 
     public void stopCharging(double duration) throws ChargingException {
-        if (!Active) {
-            throw new ChargingException("No active charging session.");
-        }
-        if(duration<=0){
-            throw new ChargingException("Charging duration must be greater than zero.");
+        try {
+
+            if (!Active) {
+                throw new ChargingException("No active charging session.");
+            }
+            if (duration <= 0) {
+                throw new ChargingException("Charging duration must be greater than zero.");
+            }
+
+            ChargingDuration = duration;
+            Active = false;
+
+            System.out.println("Charging session stopped.");
+            System.out.println("Charging Duration: " + ChargingDuration + " hours");
         }
 
-        ChargingDuration = duration;
-        Active = false;
-
-        System.out.println("Charging session stopped.");
-        System.out.println("Charging Duration: " + ChargingDuration + " hours");
+        finally {
+            System.out.println("Charging completed.");
+        }
     }
 
     public void displaySession() {
