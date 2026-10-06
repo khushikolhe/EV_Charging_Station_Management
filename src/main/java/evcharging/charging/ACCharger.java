@@ -7,7 +7,9 @@ public class ACCharger extends Charger {
         return chargingphase;
     }
 
-    ACCharger() {
+     public ACCharger() {
+        super("AC385", 7.2, true);
+        chargingphase = 3;
     }
 
     public void displayCharger()  {

@@ -5,12 +5,18 @@ public abstract class Charger  {
     private double power;
     private boolean availablility;
 
+    public Charger(String chargerID, double power, boolean availablility) {
+        this.chargerID = chargerID;
+        this.power = power;
+        this.availablility = availablility;
+    }
+
     public void displayCharger()
     {
         System.out.println("---Charging Information---");
-        System.out.println("Charger ID: "+chargerID);
-        System.out.println("Charging power: "+power+" kWh");
-        System.out.println("Charger availability: "+availablility);
+        System.out.println("Charger ID             : "+chargerID);
+        System.out.println("Charging power         : "+power+" kW");
+        System.out.println("Charger availability   : "+availablility);
     }
 
 }

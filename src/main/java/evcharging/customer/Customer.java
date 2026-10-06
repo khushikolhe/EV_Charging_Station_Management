@@ -12,8 +12,8 @@ public class Customer  {
         this.phonenumber = phonenumber;
     }
 
-    public void displayUser() {
-        System.out.println("----User Information----");
+    public void displayCustomer() {
+        System.out.println("----Customer Information----");
         System.out.println("User name: " + username);
         System.out.println("User ID: " + ID);
         System.out.println("Phone number: " + phonenumber);

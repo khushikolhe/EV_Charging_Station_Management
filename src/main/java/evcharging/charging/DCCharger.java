@@ -7,7 +7,9 @@ public class DCCharger extends Charger {
         return maxVoltage;
     }
 
-    DCCharger() {
+    public DCCharger() {
+        super("DC275", 60.0, true);
+        maxVoltage = 400;
     }
 
     public void displayCharger()  {
