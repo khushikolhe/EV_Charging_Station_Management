@@ -24,7 +24,7 @@ public class Main {
             System.out.println("1. Register Customer");
             System.out.println("2. Register Vehicle");
             System.out.println("3. View Charging Stations");
-            System.out.println("4. Preview Cost & Start Charging");
+            System.out.println("4. Start Charging");
             System.out.println("5. Complete Charging Session & Generate Bill");
             System.out.println("6. Make Payment");
             System.out.println("7. View Charging Session");
@@ -129,7 +129,7 @@ public class Main {
                         break;
                     }
                     try {
-                        session.stopCharging(duration);
+                        session.stopCharging();
                     }
                     catch (Exception e) {
                         System.out.println("Error: " + e.getMessage());

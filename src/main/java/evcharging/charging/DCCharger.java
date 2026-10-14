@@ -16,5 +16,6 @@ public class DCCharger extends Charger {
         super.displayCharger();
         System.out.println("This is a DC charger");
         System.out.println("Maximum voltage: " + maxVoltage);
+        System.out.println();
     }
 }

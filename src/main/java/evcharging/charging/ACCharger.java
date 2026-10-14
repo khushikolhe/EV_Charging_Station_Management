@@ -16,5 +16,6 @@ public class ACCharger extends Charger {
         super.displayCharger();
         System.out.println("This is an AC charger");
         System.out.println("Charging Phase: " + chargingphase);
+        System.out.println();
     }
 }

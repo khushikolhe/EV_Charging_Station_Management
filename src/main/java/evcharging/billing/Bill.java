@@ -20,6 +20,9 @@ public class Bill{
     }
 
     public void CalculateBill(double TaxRate) {
+        if (BillId == 0) {
+            BillId = 1;
+        }
         double amount = EnergyConsumed * RatePerUnit;
         TotalAmount = amount + (amount * TaxRate/100);
     }

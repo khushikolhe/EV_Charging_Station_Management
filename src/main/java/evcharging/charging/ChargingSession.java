@@ -16,7 +16,7 @@ class ChargingException extends Exception {
 }
 
 public class ChargingSession {
-    private int SessionID;
+    private int SessionId;
     private Customer customer;
     private Vehicle vehicle;
     private ChargingStation station;
@@ -33,6 +33,9 @@ public class ChargingSession {
         if (Duration <= 0) {
             throw new ChargingException(
                     "Charging duration must be greater than zero.");
+        }
+        if (SessionId == 0) {
+            SessionId = 1;
         }
 
         ChargingDuration = Duration;
@@ -57,7 +60,7 @@ public class ChargingSession {
             }
             Active = false;
 
-            bill = new Bill(SessionID, ChargingDuration * 10, 10, ChargingDuration);
+            bill = new Bill(SessionId, ChargingDuration * 10, 10, ChargingDuration);
             bill.CalculateBill();
             bill.DisplayBill();
 
@@ -76,14 +79,14 @@ public class ChargingSession {
         else {
             throw new ChargingException("Invalid payment method.");
         }
-        payment = new Payment(SessionID, bill.getTotalAmount(), paymentMethod);
+        payment = new Payment(SessionId, bill.getTotalAmount(), paymentMethod);
         payment.makePayment();
         payment.displayPayment();
     }
 
     public void displaySession() {
         System.out.println("----- Charging Session -----");
-        System.out.println("Session ID: " + SessionID);
+        System.out.println("Session ID: " + SessionId);
         System.out.println("Charging Duration: " + ChargingDuration + " hours");
         System.out.println("Session Active: " + Active);
     }
