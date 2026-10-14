@@ -26,10 +26,16 @@ public class ChargingSession {
     private Bill bill;
     private Payment payment;
 
-    public void startCharging() throws ChargingException{
+    public void startCharging(double Duration) throws ChargingException{
         if(Active) {
             throw new ChargingException("Charging session is already active.");
         }
+        if (Duration <= 0) {
+            throw new ChargingException(
+                    "Charging duration must be greater than zero.");
+        }
+
+        ChargingDuration = Duration;
         Active = true;
         System.out.println("Charging session started.");
 
@@ -45,15 +51,10 @@ public class ChargingSession {
         }
     }
 
-    public void stopCharging(double duration) throws ChargingException {
+    public void stopCharging() throws ChargingException {
             if (!Active) {
                 throw new ChargingException("No active charging session.");
             }
-            if (duration <= 0) {
-                throw new ChargingException("Charging duration must be greater than zero.");
-            }
-
-            ChargingDuration = duration;
             Active = false;
 
             bill = new Bill(SessionID, ChargingDuration * 10, 10, ChargingDuration);

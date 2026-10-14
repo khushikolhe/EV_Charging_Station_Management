@@ -24,8 +24,8 @@ public class Main {
             System.out.println("1. Register Customer");
             System.out.println("2. Register Vehicle");
             System.out.println("3. View Charging Stations");
-            System.out.println("4. Start Charging");
-            System.out.println("5. Stop Charging");
+            System.out.println("4. Preview Cost & Start Charging");
+            System.out.println("5. Complete Charging Session & Generate Bill");
             System.out.println("6. Make Payment");
             System.out.println("7. View Charging Session");
             System.out.println("8. Exit");
@@ -109,8 +109,14 @@ public class Main {
                     if(session == null) {
                         session = new ChargingSession();
                     }
+                    System.out.print("Enter charging duration in hours: ");
+                    double dur = sc.nextDouble();
+                    if (dur <= 0) {
+                        System.out.println("Duration must be greater than zero.");
+                        break;
+                    }
                     try {
-                        session.startCharging();
+                        session.startCharging(dur);
                     }
                     catch (Exception e) {
                         System.out.println("Error: " + e.getMessage());
@@ -122,8 +128,6 @@ public class Main {
                         System.out.println("No charging session found.");
                         break;
                     }
-                    System.out.print("Enter Charging Duration in hrs: ");
-                    double duration = sc.nextDouble();
                     try {
                         session.stopCharging(duration);
                     }
