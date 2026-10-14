@@ -14,6 +14,9 @@ public class Main {
         Customer customer = null;
         Vehicle vehicle = null;
         ChargingStation station = null;
+        ChargingStation station1 = null;
+        ChargingStation station2 = null;
+        ChargingStation station3 = null;
         ChargingSession session = null;
         int choice;
         do {
@@ -38,6 +41,7 @@ public class Main {
                     String phone = sc.next();
                     customer = new Customer(name, id, phone);
                     System.out.println("Customer registered successfully.");
+                    sc.nextLine();
                     customer.displayCustomer();
                     break;
 
@@ -50,16 +54,51 @@ public class Main {
                     String batteryCapacity = sc.next();
                     vehicle = new Vehicle(vehicleNumber, model, batteryCapacity);
                     System.out.println("Vehicle registered successfully.");
+                    System.out.println();
                     vehicle.displayVehicleInfo();
                     break;
 
                 case 3:
-                    station = new ChargingStation("S101", "Baner Charging Station", "Pune", 2);
-                    ACCharger ac = new ACCharger();
-                    DCCharger dc = new DCCharger();
-                    station.addCharger(ac);
-                    station.addCharger(dc);
-                    station.display();
+                    if (station1 == null) {
+                        station1 = new ChargingStation("S101", "Baner Charging Station", "Pune", 5);
+                        station1.addCharger(new ACCharger());
+                        station1.addCharger(new DCCharger());
+
+                        station2 = new ChargingStation("S102", "Wakad Charging Station", "Pune", 5);
+                        station2.addCharger(new ACCharger());
+                        station2.addCharger(new DCCharger());
+
+                        station3 = new ChargingStation("S103", "Hinjawadi Charging Station", "Pune", 5);
+                        station3.addCharger(new ACCharger());
+                        station3.addCharger(new DCCharger());
+                    }
+
+                    System.out.println("\n--- Available Charging Stations ---");
+                    System.out.println("1. Baner Charging Station");
+                    System.out.println("2. Wakad Charging Station");
+                    System.out.println("3. Hinjawadi Charging Station");
+                    System.out.println();
+                    System.out.print("Select a station: ");
+                    int Choice = sc.nextInt();
+                    switch (Choice) {
+                        case 1:
+                            station = station1;
+                            break;
+
+                        case 2:
+                            station = station2;
+                            break;
+
+                        case 3:
+                            station = station3;
+                            break;
+
+                        default:
+                            System.out.println("Invalid station choice.");
+                            break;
+                    }
+                        System.out.println("Station:");
+                        station.display();
                     break;
 
                 case 4:

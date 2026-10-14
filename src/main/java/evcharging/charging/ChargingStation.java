@@ -33,7 +33,6 @@ public class ChargingStation {
         for(int i=0;i<chargers.length;i++) {
             if(chargers[i]==null){
                 chargers[i]=charger;
-                System.out.println("Charger added successfully!");
                 return;
             }
         }
