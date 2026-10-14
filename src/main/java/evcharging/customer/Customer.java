@@ -19,9 +19,7 @@ public class Customer  {
         System.out.println("Phone number: " + phonenumber);
     }
 
-    public String getusername() {
-        return username;
-    }
+    public String getusername() {return username;}
     public String getID() {return ID;}
     public String getphonenumber() {
         return phonenumber;

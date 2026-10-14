@@ -1,6 +1,6 @@
 package evcharging.billing;
 
-public class UPIPayment implements PaymentMethod{
+public class UPIPayment implements PaymentMethod {
 
     @Override
     public void pay(double amount) {
